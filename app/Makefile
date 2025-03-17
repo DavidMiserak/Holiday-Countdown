@@ -4,6 +4,12 @@ RUNTIME ?= podman
 NAME ?= $(shell basename $(CURDIR))
 IMAGE ?= $(NAME):latest
 
+.PHONY: pre-commit-setup
+pre-commit-setup:
+	pre-commit install
+	pre-commit install --install-hooks
+	pre-commit run --all-files
+
 .PHONY: image-build
 image-build: Dockerfile
 	$(RUNTIME) build -t $(IMAGE) .
