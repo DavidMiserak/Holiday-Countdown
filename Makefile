@@ -23,6 +23,10 @@ image-run: image-build
 	--name $(NAME) \
 	$(IMAGE)
 
+.PHONY: test-bdd
+test-bdd:
+	behave tests/features
+
 .PHONY: clean
 clean:
 	$(RUNTIME) rm -f $(NAME)
