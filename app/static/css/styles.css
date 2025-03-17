@@ -1,0 +1,24 @@
+body {
+	background-color: #f4f6f9;
+}
+
+.list-group-item {
+	transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+	background-color: #f8f9fa;
+}
+
+.countdown-timer {
+	color: #6c757d;
+	font-weight: bold;
+}
+
+.btn-group form {
+	margin: 0;
+}
+
+.card {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

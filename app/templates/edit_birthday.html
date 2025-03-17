@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Birthday{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+	<div class="col-md-6">
+		<div class="card">
+			<div class="card-header">
+				<h2>Edit Birthday</h2>
+			</div>
+			<div class="card-body">
+				<form method="POST">
+					<div class="mb-3">
+						<label for="name" class="form-label">Name</label>
+						<input type="text" class="form-control" id="name" name="name"
+							value="{{ birthday.name }}" required>
+					</div>
+					<div class="mb-3">
+						<label for="date" class="form-label">Birthday Date</label>
+						<input type="date" class="form-control" id="date" name="date"
+							value="{{ birthday.date.strftime('%Y-%m-%d') }}" required>
+					</div>
+					<button type="submit" class="btn btn-primary">Update Birthday</button>
+					<a href="{{ url_for('main.index') }}" class="btn btn-secondary">Cancel</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
